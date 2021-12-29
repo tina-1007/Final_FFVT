@@ -1,4 +1,4 @@
-# Put trained model here
+# Put trained model in this directory
 
 * You can get our trained model [here](https://drive.google.com/file/d/104uZv9ZKWDhNuwHupQobG9UtCb8LeX0M/view?usp=sharing)
 
