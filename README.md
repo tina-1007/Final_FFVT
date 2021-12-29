@@ -24,6 +24,7 @@ python prepare_data.py
 1. train_image_labels.txt
 2. valid_image_labels.txt
 3. test_order.txt
+
 ## Download Google pre-trained ViT models
 
 * [Get models in this link](https://console.cloud.google.com/storage/vit_models/): ViT-B_16, ViT-B_32...
@@ -37,6 +38,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_nod
 ```
 
 ## Inference
+* Get our trained model [here](https://drive.google.com/file/d/104uZv9ZKWDhNuwHupQobG9UtCb8LeX0M/view?usp=sharing)
+* Put it under `output/ViT-B_16_lr0.005/`
+* More information in `output/ViT-B_16_lr0.005/README.md`
 ```
 CUDA_VISIBLE_DEVICES=0 python inference.py --name test
 ```
