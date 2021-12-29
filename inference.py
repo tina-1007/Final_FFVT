@@ -51,17 +51,16 @@ def main():
                         default="ViT-B_16",
                         help="Which variant to use.")
     parser.add_argument('--data_root', type=str, default='./data')
-    parser.add_argument("--pretrained_dir", type=str, default="ViT-L_16.npz",
-                        help="Where to search for pretrained ViT models.")
     parser.add_argument("--pretrained_model", type=str,
-                        default='./checkpoints/ViT-B_16_lr0.005_steps1640.bin',
+                        default='./output/ViT-B_16_lr0.005/ViT-B_16_lr0.005.bin',
                         help="load pretrained model")
     parser.add_argument("--img_size", default=448, type=int,
                         help="Resolution size")
     parser.add_argument("--resize_size", default=600, type=int,
                         help="Resolution size")
     parser.add_argument("--num_token", default=12, type=int,
-                        help="the number of selected token in each layer, 12 for soy.loc, cotton and cub, 24 for dog.")
+                        help="the number of selected token in each layer, \
+                        12 for soy.loc, cotton and cub, 24 for dog.")
     parser.add_argument('--smoothing_value', type=float, default=0.0,
                         help="Label smoothing value\n")
     parser.add_argument('--split', type=str, default='non-overlap',
@@ -78,7 +77,8 @@ def main():
     parser.add_argument('--feature_fusion', action='store_true',
                         help="Whether to use feature fusion")
     parser.add_argument('--loss_scale', type=float, default=0,
-                        help="Loss scaling to improve fp16 numeric stability. Only used when fp16 set to True.\n"
+                        help="Loss scaling to improve fp16 numeric stability. \
+                              Only used when fp16 set to True.\n"
                              "0 (default value): dynamic loss scaling.\n"
                              "Positive power of 2: static loss scaling value.\n")
 
@@ -99,7 +99,6 @@ def main():
 
     # Model & Tokenizer Setup
     args, model = setup(args)
-    # print(model)
 
     # all the testing images
     with open(os.path.join(args.data_root, 'test_order.txt')) as f:

@@ -76,10 +76,6 @@ def setup(args):
         config, args.img_size, zero_head=True, num_classes=num_classes,
         vis=True, smoothing_value=args.smoothing_value, dataset=args.dataset)
 
-    # pretrained_model = '{}/{}.npz'.format(args.pretrained_dir, args.model_type)
-    # print("Load from {}".format(pretrained_model))
-    # model.load_from(np.load(pretrained_model))
-
     model.load_from(np.load(args.pretrained_dir))
     model.to(args.device)
 
@@ -316,7 +312,7 @@ def main():
                                                  "ViT-L_32", "ViT-H_14", "R50-ViT-B_16"],
                         default="ViT-B_16",
                         help="Which variant to use.")
-    parser.add_argument("--pretrained_dir", type=str, default="./pretrained/ViT-B_16.npz",
+    parser.add_argument("--pretrained_dir", type=str, default="ViT-B_16.npz",
                         help="Where to search for pretrained ViT models.")
     parser.add_argument("--output_dir", default="output", type=str,
                         help="The output directory where checkpoints will be written.")
