@@ -1,0 +1,7 @@
+numpy
+tqdm
+scipy==1.2.1
+tensorboard
+ml-collections
+matplotlib
+pandas
