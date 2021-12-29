@@ -7,6 +7,7 @@
   - [PyTorch = 1.5]
   - [Torchvision]
 
+* Install [Apex](https://github.com/NVIDIA/apex)
 * Install other needed packages
 ```
 pip install -r requirements.txt
